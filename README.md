@@ -1,317 +1,289 @@
 <div align="center">
 
-# 🏬 Makassar Store — Point of Sale System
+# 🏬 Makassar Store — Sistem Kasir Berbasis Web
 
-**Sistem kasir modern berbasis web untuk toko ritel khas Makassar.**  
-Dibangun dengan PHP Native + MySQL, desain dark-mode premium, dan fitur lengkap siap pakai.
+[![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=flat-square&logo=php&logoColor=white)](https://php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-8.x-4479A1?style=flat-square&logo=mysql&logoColor=white)](https://mysql.com)
+[![XAMPP](https://img.shields.io/badge/XAMPP-Compatible-FB7A24?style=flat-square&logo=xampp&logoColor=white)](https://apachefriends.org)
+[![License](https://img.shields.io/badge/License-MIT-10B981?style=flat-square)](LICENSE)
 
-[![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
-[![MySQL](https://img.shields.io/badge/MySQL-8.x-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
-[![XAMPP](https://img.shields.io/badge/XAMPP-Compatible-FB7A24?style=for-the-badge&logo=xampp&logoColor=white)](https://apachefriends.org)
-[![License](https://img.shields.io/badge/License-MIT-10B981?style=for-the-badge)](LICENSE)
+Proyek tugas akhir — sistem kasir web sederhana yang saya buat sendiri pakai PHP native dan MySQL, tanpa framework apapun. Didesain dengan tampilan dark-mode yang nyaman di mata dan bisa langsung dipakai di XAMPP.
 
 </div>
 
 ---
 
-## 📋 Daftar Isi
+## Tentang Proyek
 
-- [Tentang Proyek](#-tentang-proyek)
-- [Fitur Utama](#-fitur-utama)
-- [Tampilan Aplikasi](#-tampilan-aplikasi)
-- [Teknologi yang Digunakan](#-teknologi-yang-digunakan)
-- [Instalasi](#-instalasi)
-- [Konfigurasi Database](#-konfigurasi-database)
-- [Akun Default](#-akun-default)
-- [Struktur Folder](#-struktur-folder)
-- [Lisensi](#-lisensi)
+Makassar Store adalah aplikasi Point of Sale (POS) berbasis web yang saya kembangkan sebagai tugas kuliah. Memang tujuan awalnya cuma buat tugas, tapi saya usahain supaya fitur-fiturnya beneran bisa dipakai — mulai dari kelola produk, proses transaksi, sampai laporan penjualan yang bisa diekspor ke Excel.
 
----
-
-## 📌 Tentang Proyek
-
-**Makassar Store POS** adalah aplikasi kasir berbasis web yang dirancang untuk membantu pengelolaan toko ritel secara digital. Sistem ini mencakup seluruh alur operasional toko — mulai dari manajemen produk, proses transaksi penjualan, pencatatan member, hingga laporan keuangan dengan ekspor Excel.
+Nama *Makassar Store* sendiri saya ambil karena saya orang Makassar 😄 dan slogannya juga saya bikin sendiri:
 
 > *"Belanja Mudah, Hidup Berkah — Khas Makassar"*
 
 ---
 
-## ✨ Fitur Utama
+## Fitur yang Ada
 
-| Modul | Deskripsi |
+| Modul | Keterangan |
 |---|---|
-| 🔐 **Autentikasi** | Login & Register dengan kode registrasi khusus, multi-role (Admin / Kasir) |
-| 📊 **Dashboard** | Statistik real-time: omset harian/bulanan, produk terlaris, transaksi terbaru, stok kritis |
-| 🛒 **Transaksi POS** | Interface kasir intuitif — klik produk, atur qty, pilih metode bayar, cetak struk |
-| 📦 **Stok Barang** | CRUD produk lengkap dengan kode barang, harga beli/jual, stok, satuan, dan status |
-| 🏷️ **Kategori** | Pengelompokan produk dengan icon emoji dan tracking total stok per kategori |
-| 👥 **Member** | Manajemen pelanggan dengan sistem poin, riwayat belanja, dan statistik top member |
-| 📈 **Laporan Penjualan** | Filter periode/metode/member, grafik interaktif, rekap per metode, ekspor ke Excel |
-| 👤 **Profil & Setelan** | Setiap user bisa edit nama, username, email, dan ganti password secara mandiri |
+| 🔐 Login & Register | Ada sistem kode registrasi supaya nggak sembarangan orang bisa daftar |
+| 📊 Dashboard | Ringkasan omset hari ini, grafik penjualan 7 hari, stok kritis, transaksi terakhir |
+| 🛒 Transaksi / POS | Pilih produk, atur qty, bayar, langsung keluar struk |
+| 📦 Manajemen Barang | Tambah, edit, hapus produk + pantau stok |
+| 🏷️ Kategori | Pengelompokan barang biar lebih rapi |
+| 👥 Member | Data pelanggan, sistem poin, riwayat belanja |
+| 📈 Laporan | Filter by tanggal/metode/member, grafik, ekspor ke Excel |
+| 👤 Profil | Tiap user bisa ganti nama, email, dan password sendiri |
 
 ---
 
-## 📸 Tampilan Aplikasi
+## Tampilan Aplikasi
+
+Berikut screenshot dari tiap halaman utama sistemnya.
+
+---
 
 ### 1. Halaman Login
-Tampilan awal sistem dengan form login yang bersih, background animasi bintang, dan identitas brand Makassar Store.
 
 ![Login](documentasi/1_login.png)
+
+Halaman pertama yang muncul saat buka aplikasi. Ada form login biasa dan tombol ke halaman register. Background-nya pakai animasi partikel bintang yang bergerak pelan — efeknya lumayan bikin tampilannya hidup. Di bagian tengah ada logo dan nama toko.
 
 ---
 
 ### 2. Halaman Register
-Form pendaftaran akun baru dengan validasi kode registrasi dari Admin — menjaga keamanan sistem dari akses tidak sah.
 
 ![Register](documentasi/2_register.png)
 
+Form pendaftaran akun baru. Ada input nama, username, email, password, dan satu field khusus: **kode registrasi**. Kode ini harus diisi dengan benar supaya bisa daftar — ini cara saya biar orang yang nggak berkepentingan nggak bisa sembarangan bikin akun. Kode defaultnya `MKSTR2026`.
+
 ---
 
-### 3. Dashboard — Ringkasan Harian
-Tampilan utama setelah login. Menampilkan statistik real-time: omset hari ini & bulan ini, total produk, jumlah member aktif, grafik penjualan 7 hari, dan produk terlaris.
+### 3. Dashboard — Statistik Utama
 
 ![Dashboard](documentasi/3_dashboard.png)
 
+Ini halaman utama setelah masuk. Di bagian atas ada empat kartu statistik: omset hari ini, omset bulan ini, total produk aktif, dan jumlah member. Di bawahnya ada grafik bar penjualan 7 hari terakhir dan grafik donut untuk 5 produk terlaris. Semua data realtime dari database.
+
 ---
 
-### 4. Dashboard — Transaksi Terbaru & Stok Kritis
-Bagian bawah dashboard menampilkan riwayat transaksi lengkap dengan metode bayar, total, dan peringatan stok kritis otomatis.
+### 4. Dashboard — Transaksi & Stok Kritis
 
 ![Dashboard Transaksi](documentasi/4_dashboard_transaksi.png)
 
+Bagian bawah dashboard. Sebelah kiri ada tabel transaksi terbaru — tampil kode transaksi, nama kasir atau member, metode pembayaran (Tunai/QRIS/Transfer), dan total. Sebelah kanan ada daftar produk yang stoknya sudah menipis, jadi bisa langsung tahu produk mana yang perlu segera diisi ulang.
+
 ---
 
-### 5. Transaksi Kasir — POS Interface
-Halaman utama kasir dengan grid produk, filter kategori, pencarian real-time (support barcode scan), dan panel keranjang belanja di sisi kanan.
+### 5. Halaman Transaksi (POS)
 
 ![Transaksi POS](documentasi/5_transaksi_pos.png)
 
+Ini halaman kasir yang saya desain supaya nyaman dipakai. Sebelah kiri ada grid produk yang bisa difilter per kategori atau dicari pakai searchbar (support scan barcode juga). Tiap produk ditampilkan dengan nama, harga, dan info stok. Sebelah kanan ada keranjang belanja yang update otomatis saat produk dipilih.
+
 ---
 
-### 6. Modal Proses Pembayaran
-Dialog pembayaran dengan pilihan metode (Tunai / QRIS / Transfer), input uang bayar, tombol nominal cepat, dan kalkulasi kembalian otomatis.
+### 6. Modal Pembayaran
 
 ![Proses Pembayaran](documentasi/6_proses_pembayaran.png)
 
+Dialog yang muncul waktu klik tombol bayar. Bisa pilih metode pembayaran: Tunai, QRIS, atau Transfer Bank. Kalau pilih Tunai, ada input uang yang diterima — kembaliannya otomatis dihitung. Ada juga tombol nominal cepat (50rb, 100rb, dll.) biar nggak perlu ketik manual. Bisa juga input member kalau pelanggannya punya kartu.
+
 ---
 
-### 7. Struk Pembayaran (Preview)
-Preview struk digital setelah transaksi berhasil, dengan opsi cetak struk fisik atau mulai transaksi baru.
+### 7. Struk Digital (Preview)
 
 ![Struk Preview](documentasi/7_struk_preview.png)
 
+Tampilan pratinjau struk setelah transaksi berhasil diproses. Di sini muncul semua detail transaksi: kode unik, tanggal dan jam, daftar barang yang dibeli, total bayar, dan kembalian. Ada dua tombol di bawah — satu untuk cetak struk fisik, satu lagi untuk langsung mulai transaksi baru.
+
 ---
 
-### 8. Cetak Struk — Halaman Print
-Tampilan struk format thermal printer dengan kode transaksi, detail item, total bayar, kembalian, dan kode transaksi unik.
+### 8. Cetak Struk (Format Thermal)
 
 ![Cetak Struk](documentasi/8_cetak_struk.png)
 
+Tampilan struk versi print, diformat sesuai ukuran kertas thermal printer standar (58mm atau 80mm). Isinya nama toko, alamat, nomor transaksi, detail item dengan qty dan harga satuan, total, uang bayar, kembalian, dan ucapan terima kasih di bawah.
+
 ---
 
-### 9. Manajemen Stok Barang
-Tabel inventori lengkap dengan kode barang, kategori, harga beli & jual, stok dengan visual bar, satuan, status, dan tombol aksi (tambah stok, edit, hapus).
+### 9. Manajemen Barang
 
 ![Stok Barang](documentasi/9_stok_barang.png)
+
+Halaman untuk kelola semua produk. Tampilannya tabel dengan kolom: kode barang, nama, kategori, harga beli, harga jual, stok (dengan progress bar warna), satuan, dan status aktif/nonaktif. Ada juga tombol tambah stok yang langsung bisa dipakai tanpa harus masuk ke form edit dulu.
 
 ---
 
 ### 10. Manajemen Kategori
-Daftar kategori produk dengan icon, deskripsi, jumlah produk, total stok, dan tanggal dibuat.
 
 ![Kategori](documentasi/10_kategori.png)
+
+Tabel kategori produk. Tiap kategori ditampilkan dengan icon emoji, nama, deskripsi, jumlah produk di bawahnya, total stok gabungan, dan tanggal dibuat. Bisa tambah, edit, atau hapus kategori dari sini.
 
 ---
 
 ### 11. Manajemen Member
-Data pelanggan terregistrasi: poin loyalitas, total belanja, jumlah transaksi, status aktif/nonaktif, dan statistik top member.
 
 ![Member](documentasi/11_member.png)
 
+Data pelanggan yang terdaftar sebagai member. Tampil nama, nomor telepon, total belanja keseluruhan, jumlah transaksi, poin loyalitas yang terkumpul, dan status aktif/nonaktif. Di bagian atas ada ringkasan singkat: total member aktif, total poin beredar, dan member baru bulan ini.
+
 ---
 
-### 12. Laporan Penjualan — Statistik & Grafik
-Filter laporan by rentang tanggal, metode bayar, dan member. Menampilkan total omset, transaksi, rata-rata, diskon, grafik periode, dan rekap per metode pembayaran.
+### 12. Laporan Penjualan — Ringkasan & Grafik
 
 ![Laporan Statistik](documentasi/12_laporan_statistik.png)
+
+Halaman laporan dengan filter tanggal, metode pembayaran, dan member. Setelah filter dijalankan, tampil ringkasan: total omset, jumlah transaksi, rata-rata per transaksi, dan total diskon. Di bawahnya ada grafik garis penjualan per hari dan tabel rekap per metode pembayaran.
 
 ---
 
 ### 13. Laporan Penjualan — Detail Transaksi
-Tabel detail setiap transaksi lengkap dengan kode, member, jumlah item, subtotal, diskon, total, metode bayar, dan tanggal.
 
 ![Laporan Detail](documentasi/13_laporan_detail.png)
 
+Tabel detail tiap transaksi dalam periode yang dipilih. Kolom yang tampil: kode transaksi, nama kasir, member (kalau ada), jumlah item, subtotal, diskon, total, metode bayar, dan waktu transaksi. Bisa discroll ke bawah kalau datanya banyak.
+
 ---
 
-### 14. Profil Saya — Edit Profil
-Halaman pengaturan akun: ubah nama lengkap, username, dan email. Tersedia untuk semua role (Admin maupun Kasir). Role hanya bisa diubah oleh Administrator.
+### 14. Profil — Edit Data Akun
 
 ![Edit Profil](documentasi/14_profil_edit.png)
 
+Halaman pengaturan akun pribadi. Setiap user bisa ubah nama lengkap, username, dan email dari sini. Role (Admin/Kasir) nggak bisa diubah sendiri — hanya Admin yang bisa ubah role orang lain.
+
 ---
 
-### 15. Profil Saya — Ganti Password
-Form ganti password dengan validasi password lama, strength indicator real-time, konfirmasi password, dan tips keamanan.
+### 15. Profil — Ganti Password
 
 ![Ganti Password](documentasi/15_profil_password.png)
 
+Form ganti password dengan tiga field: password lama (untuk verifikasi), password baru, dan konfirmasi password baru. Ada indikator kekuatan password realtime yang berubah warna sesuai tingkat keamanannya — hijau kalau kuat, merah kalau masih lemah.
+
 ---
 
-### 16. Export Excel — Laporan Penjualan
-Hasil ekspor laporan ke format `.xls` dengan judul, periode, ringkasan statistik, dan tabel data yang rapi — siap digunakan untuk keperluan administrasi.
+### 16. Export Excel
 
 ![Export Excel](documentasi/16_export_excel.png)
 
+Hasil ekspor laporan ke format `.xls`. File langsung otomatis terdownload saat klik tombol Export di halaman laporan. Isinya sudah terformat rapi: ada judul laporan, periode, ringkasan statistik di bagian atas, lalu tabel detail transaksi di bawahnya.
+
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Dipakai
 
-| Layer | Teknologi |
+| Layer | Detail |
 |---|---|
-| **Backend** | PHP 8.x (Native, tanpa framework) |
-| **Database** | MySQL 8.x via `mysqli` |
-| **Frontend** | HTML5, CSS3 (Vanilla), JavaScript (ES6+) |
-| **Chart** | Chart.js (via CDN) |
-| **Icons** | Font Awesome 6.5 |
-| **Font** | Plus Jakarta Sans (Google Fonts) |
-| **Server** | XAMPP (Apache + MySQL) |
+| Backend | PHP 8.x (native, tanpa framework) |
+| Database | MySQL 8.x via `mysqli` |
+| Frontend | HTML5, CSS3 (vanilla), JavaScript |
+| Grafik | Chart.js (via CDN) |
+| Icon | Font Awesome 6.5 |
+| Font | Plus Jakarta Sans (Google Fonts) |
+| Server | XAMPP (Apache + MySQL) |
 
 ---
 
-## 🚀 Instalasi
+## Cara Instalasi
 
-### Prasyarat
-- XAMPP (versi 8.x atau lebih baru)
-- PHP 8.0+
-- MySQL 8.0+
-- Browser modern (Chrome, Firefox, Edge)
+**Kebutuhan sistem:**
+- XAMPP (Apache + MySQL)
+- PHP 8.0 ke atas
+- Browser modern
 
-### Langkah Instalasi
+**Langkah-langkahnya:**
 
-**1. Clone atau download repository ini:**
+**1. Download atau clone repo ini**
 ```bash
 git clone https://github.com/username/makassar-store.git
 ```
 
-**2. Pindahkan folder ke direktori XAMPP:**
+**2. Taruh foldernya di direktori htdocs**
 ```
 C:\xampp\htdocs\kasir\
 ```
 
-**3. Jalankan XAMPP:**
-- Aktifkan **Apache** dan **MySQL** dari XAMPP Control Panel.
+**3. Nyalakan Apache dan MySQL di XAMPP Control Panel**
 
-**4. Import database:**
+**4. Import database**
 - Buka `http://localhost/phpmyadmin`
-- Buat database baru bernama `makassar_store`
-- Import file `makassar_store.sql` yang ada di root folder proyek
+- Buat database baru: `makassar_store`
+- Import file `makassar_store.sql` yang ada di root folder
 
-**5. Sesuaikan konfigurasi database** *(jika diperlukan)*:
-
-Edit file `config/database.php`:
+**5. Cek konfigurasi database** — edit `config/database.php` kalau perlu:
 ```php
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');    // sesuaikan username MySQL
-define('DB_PASS', '');        // sesuaikan password MySQL
+define('DB_USER', 'root');    // username MySQL kamu
+define('DB_PASS', '');        // password MySQL kamu (default kosong)
 define('DB_NAME', 'makassar_store');
 ```
 
-**6. Buka aplikasi di browser:**
+**6. Buka di browser:**
 ```
 http://localhost/kasir/
 ```
 
 ---
 
-## 🗄️ Konfigurasi Database
+## Akun Default
 
-File konfigurasi utama berada di `config/database.php`. Tabel-tabel yang digunakan:
-
-| Tabel | Fungsi |
-|---|---|
-| `tbl_users` | Data akun pengguna (Admin & Kasir) |
-| `tbl_kategori` | Kategori produk |
-| `tbl_barang` | Data produk & inventori |
-| `tbl_member` | Data pelanggan member |
-| `tbl_transaksi` | Header transaksi penjualan |
-| `tbl_detail_transaksi` | Item detail per transaksi |
-
----
-
-## 🔑 Akun Default
-
-Setelah instalasi, akun berikut tersedia secara otomatis:
+Setelah import database, langsung bisa login dengan:
 
 | Role | Username | Password |
 |---|---|---|
-| **Admin** | `admin` | `admin123` |
+| Admin | `admin` | `admin123` |
 
-> ⚠️ **Penting:** Segera ganti password default setelah pertama kali login melalui menu **Profil & Setelan → Ganti Password**.
+> **Catatan:** Segera ganti password setelah pertama kali masuk, lewat menu Profil → Ganti Password.
 
-Untuk mendaftarkan kasir baru, gunakan kode registrasi:
-```
-MKSTR2026
-```
-*(Kode ini bisa diubah di `config/database.php` → konstanta `REGISTER_CODE`)*
+Untuk daftarkan kasir baru, gunakan kode registrasi: **`MKSTR2026`**
+*(Bisa diubah di `config/database.php` → konstanta `REGISTER_CODE`)*
 
 ---
 
-## 📁 Struktur Folder
+## Struktur Folder
 
 ```
 kasir/
 ├── assets/
 │   └── css/
-│       └── style.css              # Stylesheet utama (dark-mode premium)
+│       └── style.css
 ├── config/
-│   └── database.php               # Konfigurasi DB & fungsi utilitas
-├── documentasi/                   # Screenshot tampilan aplikasi
+│   └── database.php
+├── documentasi/           ← screenshot tiap halaman
 │   ├── 1_login.png
 │   ├── 2_register.png
-│   ├── 3_dashboard.png
-│   ├── 4_dashboard_transaksi.png
-│   ├── 5_transaksi_pos.png
-│   ├── 6_proses_pembayaran.png
-│   ├── 7_struk_preview.png
-│   ├── 8_cetak_struk.png
-│   ├── 9_stok_barang.png
-│   ├── 10_kategori.png
-│   ├── 11_member.png
-│   ├── 12_laporan_statistik.png
-│   ├── 13_laporan_detail.png
-│   ├── 14_profil_edit.png
-│   ├── 15_profil_password.png
-│   └── 16_export_excel.png
+│   └── ... (16 file)
 ├── includes/
-│   ├── auth.php                   # Middleware autentikasi & session
-│   ├── header.php                 # Layout sidebar + topbar
-│   └── footer.php                 # Script global & penutup HTML
-├── dashboard.php                  # Halaman dashboard utama
-├── transaksi.php                  # Interface kasir POS
-├── barang.php                     # Manajemen stok produk
-├── kategori.php                   # Manajemen kategori
-├── member.php                     # Manajemen member
-├── laporan.php                    # Laporan & export Excel
-├── profil.php                     # Pengaturan profil user
-├── struk.php                      # Cetak struk transaksi
-├── login.php                      # Halaman login & register
-├── logout.php                     # Proses logout
-├── makassar_store.sql             # File dump database
-└── README.md                      # Dokumentasi proyek
+│   ├── auth.php
+│   ├── header.php
+│   └── footer.php
+├── dashboard.php
+├── transaksi.php
+├── barang.php
+├── kategori.php
+├── member.php
+├── laporan.php
+├── profil.php
+├── struk.php
+├── login.php
+├── logout.php
+├── makassar_store.sql
+└── README.md
 ```
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 
-Proyek ini dibuat untuk keperluan **tugas / pembelajaran** dan didistribusikan di bawah lisensi [MIT](LICENSE).
+Proyek ini dibuat untuk keperluan tugas kuliah dan boleh dipakai atau dimodifikasi bebas.
 
 ---
 
 <div align="center">
 
-Dibuat dengan ❤️ untuk Makassar  
+Dibuat sendiri oleh mahasiswa Makassar 🌊  
 **Makassar Store POS v3.0** · 2026
 
 </div>
